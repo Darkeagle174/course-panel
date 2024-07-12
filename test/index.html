@@ -7,19 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="menu">☰</div>
-        <div class="title">Happiness Connect</div>
-        <div class="panel"># course panel</div>
+    <div class="main-navbar">
+        <div class="hamburger-menu" onclick="toggleMainSidebar()">☰</div>
+        <div class="main-title">Happiness Connect</div>
+        <div class="course-panel-title"># course panel</div>
         <div class="admin">Admin</div>
     </div>
-    <div class="container">
-        <div class="sidebar">
+    <div class="main-sidebar" id="main-sidebar">
+        <ul>
+            <li>Home</li>
+            <li>Homework</li>
+            <li>Dashboard</li>
+            <li>About</li>
+            <li>SignUp</li>
+            <li>LogIn</li>
+        </ul>
+    </div>
+    <div class="course-container">
+        <div class="course-sidebar">
             <h2>Course 1</h2>
             <ul>
-                <li>Teachers</li>
-                <li class="active">Students</li>
-                <li>Volunteers</li>
+                <li tabindex="0">Teachers</li>
+                <li tabindex="0" class="active">Students</li>
+                <li tabindex="0">Volunteers</li>
             </ul>
         </div>
         <div class="main-content">
@@ -39,5 +49,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleMainSidebar() {
+            const sidebar = document.getElementById('main-sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

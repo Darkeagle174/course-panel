@@ -5,38 +5,69 @@ body {
     background-color: #f0f0f0;
 }
 
-.navbar {
+.main-navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(45deg, #f6d365, #fda085);
     padding: 10px 20px;
     color: #000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.navbar .menu {
+.hamburger-menu {
     font-size: 24px;
+    cursor: pointer;
 }
 
-.navbar .title {
+.main-title {
     font-size: 24px;
     font-weight: bold;
 }
 
-.navbar .panel {
+.course-panel-title {
     font-size: 20px;
 }
 
-.navbar .admin {
+.admin {
     font-size: 20px;
 }
 
-.container {
+.main-sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #fda085;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+}
+
+.main-sidebar.active {
+    left: 0;
+}
+
+.main-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-sidebar ul li {
+    padding: 15px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.course-container {
     display: flex;
     margin: 20px;
 }
 
-.sidebar {
+.course-sidebar {
     flex: 1;
     background-color: #fff;
     padding: 20px;
@@ -44,25 +75,30 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar h2 {
+.course-sidebar h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-.sidebar ul {
+.course-sidebar ul {
     list-style: none;
     padding: 0;
 }
 
-.sidebar ul li {
+.course-sidebar ul li {
     padding: 10px;
     font-size: 18px;
     cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
 }
 
-.sidebar ul li.active {
-    border: 2px solid #000;
-    border-radius: 10px;
+.course-sidebar ul li.active,
+.course-sidebar ul li:focus,
+.course-sidebar ul li:active {
+    border-color: #000;
+    outline: none; /* Remove default outline */
 }
 
 .main-content {
@@ -87,18 +123,11 @@ body {
 
 .buttons button {
     background: linear-gradient(45deg, #f6d365, #fda085);
-    border: 2px solid transparent;
+    border: none;
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
-    transition: border-color 0.3s ease;
-}
-
-.buttons button:focus, 
-.buttons button:active {
-    border-color: #000;
-    outline: none; /* Remove default outline */
 }
 
 .table-container {
